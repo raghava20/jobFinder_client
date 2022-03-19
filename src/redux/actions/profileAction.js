@@ -34,7 +34,6 @@ export const getUserProfileById = (id) => (dispatch) => {
 
     API_URL.get(`/profile/user/${id}`)
         .then(res => {
-            dispatch({ type: CLEAR_PROFILE })
             dispatch({
                 type: GET_PROFILE, payload: res.data
             })

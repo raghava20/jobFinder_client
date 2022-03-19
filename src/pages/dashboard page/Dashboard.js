@@ -6,6 +6,7 @@ import Moment from "react-moment";
 import { useNavigate } from 'react-router-dom'
 import { getPostById } from "../../redux/actions/postActions"
 import LandingPage from '../landing page/LandingPage';
+import { CLEAR_POST } from '../../redux/types';
 
 export default function Dashboard() {
 
@@ -18,7 +19,7 @@ export default function Dashboard() {
     let navigate = useNavigate()
 
     const openPostHandler = (id) => {
-
+        dispatch({ type: CLEAR_POST })
         dispatch(getPostById(id))
         navigate(`/post/${id}`)
     }

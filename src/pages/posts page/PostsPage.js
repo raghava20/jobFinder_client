@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getPostByUser } from '../../redux/actions/postActions'
 import Moment from "react-moment";
 import { Card, CardContent, Grid, Typography } from '@mui/material'
+import { CLEAR_POST } from '../../redux/types';
 
 export default function PostsPage() {
 
     useEffect(() => {
+        dispatch({ type: CLEAR_POST })
         dispatch(getPostByUser())
     }, [])
 
