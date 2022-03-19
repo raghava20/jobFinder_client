@@ -18,6 +18,7 @@ import ProfilesPage from './pages/profiles page/ProfilesPage';
 import Appbar from './components/Appbar';
 import API_URL from './utils/API_URL';
 import ApplicantsPage from './pages/applicants page/ApplicantsPage';
+import LandingPage from './pages/landing page/LandingPage';
 
 
 const theme = createTheme({
@@ -56,10 +57,12 @@ function App() {
           <Appbar />
 
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<LandingPage />} />
+
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
 
+            <Route path="/jobs" element={<Dashboard />} />
             <Route path="post">
               <Route path="create" element={<CreatePostPage />} />
               <Route path="me" element={<PostsPage />} />

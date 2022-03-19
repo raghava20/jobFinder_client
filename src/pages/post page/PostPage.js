@@ -55,7 +55,7 @@ export default function PostPage() {
         <Grid container style={{ marginTop: 10 }} justifyContent="center" alignItems="center">
             <Grid item md></Grid>
             <Grid item xs style={{ padding: 20 }}>
-                <IconButton onClick={() => navigate("/")}>
+                <IconButton onClick={() => navigate("/jobs")}>
                     <KeyboardBackspaceIcon />
                 </IconButton>
                 <Card >

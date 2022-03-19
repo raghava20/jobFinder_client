@@ -53,7 +53,7 @@ export const login = (userData, navigate) => (dispatch) => {
 
             dispatch(getLoggedInUserData())
             dispatch({ type: CLEAR_ERRORS });
-            navigate("/")
+            navigate("/jobs")
         })
         .catch(err => {
             console.log(err.response)

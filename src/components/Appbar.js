@@ -39,7 +39,7 @@ export default function Appbar() {
     const endpointHandler = (endpoint) => {
         console.log(endpoint)
         if (endpoint.includes("Applied Jobs")) return navigate("/applied-jobs")
-        else if (endpoint.includes("Jobs")) return navigate("/")
+        else if (endpoint.includes("Jobs")) return navigate("/jobs")
         else if (endpoint.includes("Post Job")) return navigate("/post/create")
         else if (endpoint.includes("My posts")) return navigate("/post/me")
         else if (endpoint.includes("Logout")) return dispatch(logout(navigate))
@@ -68,9 +68,7 @@ export default function Appbar() {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, cursor: 'pointer' }}
-                        onClick={() => navigate("/")}
-                    >
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}                    >
                         JOB FINDER
                     </Typography>
 
@@ -220,6 +218,6 @@ export default function Appbar() {
                     }
                 </Toolbar>
             </Container>
-        </AppBar>
+        </AppBar >
     )
 }
