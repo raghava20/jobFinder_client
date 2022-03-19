@@ -5,6 +5,8 @@ import { useFormik } from "formik"
 import * as yup from "yup"
 import { login } from '../../redux/actions/authActions'
 import { useDispatch, useSelector } from 'react-redux'
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import MailIcon from '@mui/icons-material/Mail';
 
 export default function Login() {
     let navigate = useNavigate()
@@ -105,6 +107,19 @@ export default function Login() {
                         Don't have an account ? sign up <Link to="/signup">here</Link>
                     </small>
                 </form>
+
+                <small style={{ display: "flex", justifyContent: 'center', alignItems: 'center', marginTop: "40px", color: "primary", flexWrap: "wrap", flexDirection: "column" }}>
+                    Demo Credentials:&nbsp;
+                    <div style={{ display: "flex", justifyContent: 'center', alignItems: 'center', gap: "3px", flexDirection: "row" }}>
+                        <MailIcon color="primary" fontSize="small" />
+                        candidate@gmail.com<br />
+                        recruiter@gmail.com<br />
+                    </div>
+                    <div>
+                        <sub><LockOpenIcon color="primary" fontSize="small" /></sub>password
+                    </div>
+
+                </small>
             </Grid>
             <Grid item sm></Grid>
         </Grid>
