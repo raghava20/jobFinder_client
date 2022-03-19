@@ -3,7 +3,7 @@ import API_URL from "../../utils/API_URL"
 
 // get all profiles
 export const getAllProfiles = () => (dispatch) => {
-    // dispatch({ type: CLEAR_PROFILE })
+    dispatch({ type: CLEAR_PROFILE })
     API_URL.get("/profile")
         .then(res => {
             dispatch({

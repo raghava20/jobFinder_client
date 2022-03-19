@@ -18,7 +18,7 @@ export const getAllPost = () => (dispatch) => {
 
 // get post by using postId
 export const getPostById = (id) => (dispatch) => {
-    // dispatch({ type: CLEAR_POST })
+    dispatch({ type: CLEAR_POST })
     API_URL.get(`/post/${id}`)
         .then(res => {
             dispatch({
