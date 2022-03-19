@@ -72,8 +72,8 @@ export const login = (userData, navigate) => (dispatch) => {
 
 // logout user and remove token from local storage
 export const logout = (navigate) => (dispatch) => {
-    localStorage.removeItem("token")
-    delete API_URL.defaults.headers.common["x-auth-token"]
     dispatch({ type: SET_UNAUTHENTICATED })
     navigate("/login")
+    localStorage.removeItem("token")
+    delete API_URL.defaults.headers.common["x-auth-token"]
 }

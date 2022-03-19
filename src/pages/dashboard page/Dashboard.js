@@ -1,4 +1,4 @@
-import { Card, CardContent, Grid, Typography } from '@mui/material'
+import { Card, CardContent, CircularProgress, Grid, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllPost } from '../../redux/actions/postActions'
@@ -25,29 +25,33 @@ export default function Dashboard() {
     }
 
     return (authenticated ?
-        <Grid container style={{ marginTop: 10 }} justifyContent="center" alignItems="center" >
-            <Grid item md></Grid>
-            <Grid item xs style={{ padding: 20 }}>
-                {posts.map(post => (<Card sx={{ mb: 1 }} key={post._id} onClick={() => openPostHandler(post._id)} style={{ cursor: 'pointer' }}>
-                    <CardContent>
-                        <Typography variant="h5" color="primary" component="div">
-                            {post.title}
-                        </Typography>
-                        <Typography color="text.secondary" gutterBottom>
-                            {post.companyName}
-                        </Typography>
-                        <Typography sx={{ mb: 1.5, fontSize: 14 }} color="text.secondary">
-                            {post.location}
-                        </Typography>
-                        <Typography sx={{ fontSize: 10 }} color="text.secondary">
-                            <Moment fromNow>{post.date}</Moment>
-                        </Typography>
-                    </CardContent>
-                </Card>))}
-            </Grid>
-            <Grid item md></Grid>
-        </Grid >
+
+        authenticated ?
+            <Grid container style={{ marginTop: 10 }} justifyContent="center" alignItems="center" >
+                <Grid item md></Grid>
+                <Grid item xs style={{ padding: 20 }}>
+                    {posts.map(post => (<Card sx={{ mb: 1 }} key={post._id} onClick={() => openPostHandler(post._id)} style={{ cursor: 'pointer' }}>
+                        <CardContent>
+                            <Typography variant="h5" color="primary" component="div">
+                                {post.title}
+                            </Typography>
+                            <Typography color="text.secondary" gutterBottom>
+                                {post.companyName}
+                            </Typography>
+                            <Typography sx={{ mb: 1.5, fontSize: 14 }} color="text.secondary">
+                                {post.location}
+                            </Typography>
+                            <Typography sx={{ fontSize: 10 }} color="text.secondary">
+                                <Moment fromNow>{post.date}</Moment>
+                            </Typography>
+                        </CardContent>
+                    </Card>))}
+                </Grid>
+                <Grid item md></Grid>
+            </Grid >
+            :
+            <LandingPage />
         :
-        <LandingPage />
+        <CircularProgress />
     )
 }

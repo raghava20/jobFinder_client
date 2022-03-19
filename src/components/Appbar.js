@@ -25,7 +25,7 @@ export default function Appbar() {
 
     useEffect(() => {
         getDataFromDb()
-    }, [])
+    }, [account])
 
     const getDataFromDb = async () => {
         if (await account) {
